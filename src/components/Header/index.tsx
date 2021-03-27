@@ -80,6 +80,12 @@ const AccountElement = styled.div<{ active: boolean }>`
   :focus {
     border: 1px solid blue;
   }
+
+  > div {
+    media (max-width: 499px) {
+      display:block;
+    }
+  }
 `
 
 const TestnetWrapper = styled.div`
@@ -121,7 +127,6 @@ const HeaderControls = styled.div`
 
 const BalanceText = styled(Text)`
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    display: none;
   `};
 `
 

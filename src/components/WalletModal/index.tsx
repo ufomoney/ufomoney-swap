@@ -54,7 +54,8 @@ const HeaderRow = styled.div`
 const ContentWrapper = styled.div`
   // background-color: ${({ theme }) => theme.bg2};
   background: linear-gradient(
-    180.31deg,rgb(124 207 255 / 79%) 0.28%, rgb(228 153 163 / 79%) 99.73%);
+    180.33deg
+    , rgb(105, 103, 235) 6.78%, rgba(62, 146, 116, 0.98) 99.71%);
   padding: 2rem;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
