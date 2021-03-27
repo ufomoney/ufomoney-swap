@@ -82,7 +82,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "integration-test": "start-server-and-test 'serve build -l 3000' http://localhost:3000 'cypress run'",
-    "postinstall": "rm -rf ./node_modules/@bscswap/sdk; cp -r ./forks/@bscswap/sdk ./node_modules/@bscswap/sdk"
+    "postinstall": "rm -rf ./node_modules/@bscswap/sdk; cp -r ./forks/@bscswap/sdk ./node_modules/@bscswap/sdk",
+    "deploy": "yarn build && cp ./build/index.html ./build/200.html && surge ./build sushiswap.org"
   },
   "eslintConfig": {
     "extends": "react-app"
