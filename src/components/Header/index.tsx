@@ -34,6 +34,14 @@ const HeaderFrame = styled.div`
     width: calc(100%);
     position: relative;
   `};
+
+  > div {
+    @media (max-width: 602px) {
+      height: 142px;
+      flex-direction: column;
+      align-items: center ! Important;
+    }
+  }
 `
 
 const HeaderElement = styled.div`
@@ -99,11 +107,16 @@ const HeaderControls = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-
   ${({ theme }) => theme.mediaWidth.upToSmall`
     flex-direction: column;
     align-items: flex-end;
   `};
+  @media (max-width: 600px) {
+    flex-direction: row;
+    align-items: end;
+    width: 100%;
+    justify-content: space-evenly;
+  }
 `
 
 const BalanceText = styled(Text)`
@@ -131,6 +144,8 @@ export default function Header() {
   return (
     <HeaderFrame>
       <RowBetween style={{ alignItems: 'flex-start' }} padding="1rem 1rem 0 1rem">
+        
+        <StyledLinkContainer>
         <HeaderElement>
           <Title href="." >
             <UniIcon>
@@ -139,9 +154,8 @@ export default function Header() {
             <StyledText>ufo.money</StyledText>
           </Title>
         </HeaderElement>
-        <StyledLinkContainer>
           <StyledAbsoluteLink href="https://info.ufo.money">About Us</StyledAbsoluteLink>
-          <StyledLink exact activeClassName="active" to="/swap">Exchange</StyledLink>
+          {/* <StyledLink exact activeClassName="active" to="/swap">Exchange</StyledLink> */}
           <StyledAbsoluteLink href=".">Stake</StyledAbsoluteLink>
         </StyledLinkContainer>
         <HeaderControls>
@@ -204,13 +218,14 @@ const StyledText = styled.span`
   @media (max-width: 770px) {
     display: none;
   }
-  @media (max-width: 400px) {
-    display: none;
-  }
+
 `
 
 const StyledLinkContainer = styled.div`
-  margin-top: 18px; 
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
 
 `
 const StyledLink = styled(NavLink)`

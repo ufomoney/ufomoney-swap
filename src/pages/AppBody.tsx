@@ -21,13 +21,10 @@ position: absolute;
 right: 67px;
 z-index: -1;
 top: -33px;
-  @media (max-width: 550px) {
+  @media (max-width: 600px) {
     display:none
   }
 
-  @media (max-width:450px) {
-    display:none;
-  }
 `
 const StyledLine = styled.div`
   width: 100%;
