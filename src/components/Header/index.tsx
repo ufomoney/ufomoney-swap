@@ -38,7 +38,7 @@ const HeaderFrame = styled.div`
   > div {
     @media (max-width: 602px) {
       height: 142px;
-      flex-direction: column;
+      flex-direction: column-reverse;
       align-items: center ! Important;
     }
   }
