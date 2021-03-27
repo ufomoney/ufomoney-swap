@@ -76,7 +76,7 @@
     "@walletconnect/web3-provider": "1.1.1-alpha.0"
   },
   "scripts": {
-    "start": "PORT=3050 react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build && copyfiles LICENSE README.md build/",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",

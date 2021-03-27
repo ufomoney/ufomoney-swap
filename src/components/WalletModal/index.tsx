@@ -52,7 +52,9 @@ const HeaderRow = styled.div`
 `
 
 const ContentWrapper = styled.div`
-  background-color: ${({ theme }) => theme.bg2};
+  // background-color: ${({ theme }) => theme.bg2};
+  background: linear-gradient(
+    180.31deg,rgb(124 207 255 / 79%) 0.28%, rgb(228 153 163 / 79%) 99.73%);
   padding: 2rem;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -90,6 +92,13 @@ const Blurb = styled.div`
     margin: 1rem;
     font-size: 12px;
   `};
+
+  > span {
+    color: #fff;
+  }
+  > a {
+    color: #5a2b7d;
+  }
 `
 
 const OptionGrid = styled.div`

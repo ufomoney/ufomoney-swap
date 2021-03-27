@@ -5,7 +5,7 @@ import { Text } from 'rebass'
 
 import styled from 'styled-components'
 
-import Logo from '../../assets/images/logo.png'
+import Logo from '../../assets/images/logo_new.png'
 import LogoDark from '../../assets/images/logo_white.png'
 import { useActiveWeb3React } from '../../hooks'
 import { useDarkModeManager } from '../../state/user/hooks'
@@ -17,6 +17,8 @@ import Menu from '../Menu'
 
 import { RowBetween } from '../Row'
 import Web3Status from '../Web3Status'
+
+import { NavLink } from 'react-router-dom'
 
 const HeaderFrame = styled.div`
   display: flex;
@@ -52,7 +54,7 @@ const Title = styled.a`
   display: flex;
   align-items: center;
   pointer-events: auto;
-
+  text-decoration: none;
   :hover {
     cursor: pointer;
   }
@@ -63,10 +65,10 @@ const AccountElement = styled.div<{ active: boolean }>`
   flex-direction: row;
   align-items: center;
   background-color: ${({ theme, active }) => (!active ? theme.bg1 : theme.bg3)};
+  
   border-radius: 12px;
   white-space: nowrap;
   width: 100%;
-
   :focus {
     border: 1px solid blue;
   }
@@ -130,24 +132,34 @@ export default function Header() {
     <HeaderFrame>
       <RowBetween style={{ alignItems: 'flex-start' }} padding="1rem 1rem 0 1rem">
         <HeaderElement>
-          <Title href=".">
+          <Title href="." >
             <UniIcon>
               <img style={{ height: 50 }} src={isDark ? LogoDark : Logo} alt="logo" />
             </UniIcon>
+            <StyledText>ufo.money</StyledText>
           </Title>
         </HeaderElement>
+        <StyledLinkContainer>
+          <StyledAbsoluteLink href="https://info.ufo.money">About Us</StyledAbsoluteLink>
+          <StyledLink exact activeClassName="active" to="/swap">Exchange</StyledLink>
+          <StyledAbsoluteLink href=".">Stake</StyledAbsoluteLink>
+        </StyledLinkContainer>
         <HeaderControls>
           <HeaderElement>
             <TestnetWrapper>
               {!isMobile && NETWORK_LABELS[chainId] && <NetworkCard>{NETWORK_LABELS[chainId]}</NetworkCard>}
             </TestnetWrapper>
-            <AccountElement active={!!account} style={{ pointerEvents: 'auto' }}>
+            <AccountElement active={!!account} 
+            style={{borderRadius: '50px', width: '207px', pointerEvents: 'auto' }}>
               {account && userEthBalance ? (
                 <BalanceText style={{ flexShrink: 0 }} pl="0.75rem" pr="0.5rem" fontWeight={500}>
                   {userEthBalance?.toSignificant(4)} BNB
                 </BalanceText>
               ) : null}
+              <Container>
               <Web3Status />
+              </Container>
+              
             </AccountElement>
           </HeaderElement>
           <HeaderElementWrap>
@@ -159,3 +171,89 @@ export default function Header() {
     </HeaderFrame>
   )
 }
+
+const Container = styled.div`
+
+  > button {
+    background: #fff;
+    border-radius: 50px;
+    width: 207px;
+    height: 46px;
+    color: #1d4273;
+    text-align: center;
+    outline: none;
+    border: none;
+    font-weight: bolder;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 15px;
+    &:hover {
+      background: linear-gradient(182.61deg, rgba(96, 224, 170, 0.67) 2.17%,
+      rgba(95, 233, 175, 0.48) 97.82%);
+      color: #fff;
+    }
+  }
+`
+const StyledText = styled.span`
+  color: #fff;
+  font-family: "Arial Rounded MT Bold", sans-serif;
+  font-size: 31px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-left: 20px;
+  @media (max-width: 770px) {
+    display: none;
+  }
+  @media (max-width: 400px) {
+    display: none;
+  }
+`
+
+const StyledLinkContainer = styled.div`
+  margin-top: 18px; 
+
+`
+const StyledLink = styled(NavLink)`
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 30px;
+  &:hover {
+    color: #93ff97;
+  }
+
+  &.active {
+    color: #6affd6;
+  }
+  &:first-child {
+    @media (max-width: 533px) {
+      padding-left: 5px;
+      padding-right: 0;
+    }
+  }
+
+  @media (max-width: 533px) {
+    font-size: 14px;
+  }
+`
+
+const StyledAbsoluteLink = styled.a`
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 30px;
+
+  @media (max-width: 533px) {
+    font-size: 14px;
+  }
+  @media (max-width: 533px) {
+    padding-left: 5px;
+    padding-right: 0;
+  }
+
+  @media (max-width: 530px) {
+    margin-right: 25px;
+  }
+`

@@ -47,7 +47,10 @@ export const ErrorText = styled(Text)<{ severity?: 0 | 1 | 2 | 3 | 4 }>`
 export const StyledBalanceMaxMini = styled.button`
   height: 22px;
   width: 22px;
-  background-color: ${({ theme }) => theme.bg2};
+  // background-color: ${({ theme }) => theme.bg2};
+  background: linear-gradient(
+    90deg
+    ,#007ED9 16.36%, rgba(0,223,252,0.94) 106.83%);
   border: none;
   border-radius: 50%;
   padding: 0.2rem;
@@ -55,17 +58,23 @@ export const StyledBalanceMaxMini = styled.button`
   font-weight: 400;
   margin-left: 0.4rem;
   cursor: pointer;
-  color: ${({ theme }) => theme.text2};
+  // color: ${({ theme }) => theme.text2};
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   float: right;
 
   :hover {
-    background-color: ${({ theme }) => theme.bg3};
+    // background-color: ${({ theme }) => theme.bg3};
+    background: linear-gradient(
+      182.61deg
+      ,rgba(96,224,170,0.67) 2.17%, rgba(95,233,175,0.48) 97.82%);
   }
   :focus {
-    background-color: ${({ theme }) => theme.bg3};
+    // background-color: ${({ theme }) => theme.bg3};
+    background: linear-gradient(90deg
+      ,#659dc5 16.36%, rgb(11 34 25 / 94%) 106.83%);
     outline: none;
   }
 `

@@ -175,13 +175,16 @@ export const TYPE = {
 
 export const FixedGlobalStyle = createGlobalStyle`
 html, input, textarea, button {
-  font-family: 'Inter', sans-serif;
+  @import url(//db.onlinewebfonts.com/c/ef6bdf5ef216552c7e9869841e891ca0?family=Arial+Rounded+MT+Bold);
+  font-family: "Arial Rounded MT Bold";
+  // font-family: 'Inter', sans-serif;
   letter-spacing: -0.018em;
   font-display: fallback;
 }
 @supports (font-variation-settings: normal) {
   html, input, textarea, button {
     font-family: 'Inter var', sans-serif;
+    font-family: "Arial Rounded MT Bold";
   }
 }
 
@@ -215,6 +218,7 @@ html {
 }
 
 body {
+  
   min-height: 100vh;
   background-position: 0 -30vh;
   background-repeat: no-repeat;
@@ -223,5 +227,7 @@ body {
       1,
       theme.bg1
     )} 100%)`};
+    background: linear-gradient(90deg, #007ED8 0%, rgba(28, 167, 219, 0.92) 100%);
 }
+
 `
