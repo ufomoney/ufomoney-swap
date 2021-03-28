@@ -26,7 +26,8 @@ const WarningContainer = styled.div`
   max-width: 420px;
   width: 100%;
   padding: 1rem;
-  background: rgba(242, 150, 2, 0.05);
+  // background: rgba(242, 150, 2, 0.05);
+  background: #fff;
   border: 1px solid #f3841e;
   box-sizing: border-box;
   border-radius: 20px;
