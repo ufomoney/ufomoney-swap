@@ -98,7 +98,7 @@ const LowerSection = styled.div`
   padding: 1.5rem;
   flex-grow: 1;
   overflow: auto;
-  background-color: ${({ theme }) => theme.bg2};
+  background-color: ${({ theme }) => theme.bg1};
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 20px;
 
@@ -194,6 +194,9 @@ const WalletAction = styled(ButtonSecondary)`
     cursor: pointer;
     text-decoration: underline;
   }
+  background: linear-gradient(
+    90deg ,#007ED9 16.36%, rgba(0,223,252,0.94) 106.83%);
+  color: #fff;
 `
 
 const MainWalletAction = styled(WalletAction)`

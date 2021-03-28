@@ -56,7 +56,10 @@ export const MenuItem = styled(RowBetween)`
   cursor: ${({ disabled }) => !disabled && 'pointer'};
   pointer-events: ${({ disabled }) => disabled && 'none'};
   :hover {
-    background-color: ${({ theme, disabled }) => !disabled && theme.bg2};
+    // background-color: ${({ theme, disabled }) => !disabled && theme.bg2};
+    background: linear-gradient(182.61deg,rgba(96,224,170,0.67) 2.17%,
+     rgba(95,233,175,0.48) 97.82%);
+     color: #fff;
   }
   opacity: ${({ disabled, selected }) => (disabled || selected ? 0.5 : 1)};
 `

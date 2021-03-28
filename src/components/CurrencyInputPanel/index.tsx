@@ -25,7 +25,10 @@ const CurrencySelect = styled.button<{ selected: boolean }>`
   height: 2.2rem;
   font-size: 20px;
   font-weight: 500;
-  background-color: ${({ selected, theme }) => (selected ? theme.bg1 : theme.primary1)};
+  // background-color: ${({ selected, theme }) => (selected ? theme.bg1 : theme.primary1)};
+  background: linear-gradient(
+    90deg
+    ,#007ED9 16.36%, rgba(0,223,252,0.94) 106.83%);
   color: ${({ selected, theme }) => (selected ? theme.text1 : theme.white)};
   border-radius: 12px;
   box-shadow: ${({ selected }) => (selected ? 'none' : '0px 6px 10px rgba(0, 0, 0, 0.075)')};
@@ -34,10 +37,20 @@ const CurrencySelect = styled.button<{ selected: boolean }>`
   user-select: none;
   border: none;
   padding: 0 0.5rem;
+  &:nth-child(2) {
+    background: linear-gradient(90deg, #007ED9 16.36%, 
+      rgba(0, 223, 252, 0.94) 106.83%);
+      border-radius: 50px;
+  }
 
   :focus,
   :hover {
-    background-color: ${({ selected, theme }) => (selected ? theme.bg2 : darken(0.05, theme.primary1))};
+    // background-color: ${({ selected, theme }) => (selected ? theme.bg2 : darken(0.05, theme.primary1))};
+    background: linear-gradient(182.61deg, rgba(96, 224, 170, 0.67) 2.17%, rgba(95, 233, 175, 0.48) 97.82%);
+  }
+
+  > span {
+    color: #fff;
   }
 `
 
@@ -74,13 +87,14 @@ const InputPanel = styled.div<{ hideInput?: boolean }>`
   ${({ theme }) => theme.flexColumnNoWrap}
   position: relative;
   border-radius: ${({ hideInput }) => (hideInput ? '8px' : '20px')};
-  background-color: ${({ theme }) => theme.bg2};
+  // background-color: ${({ theme }) => theme.bg2};
   z-index: 1;
 `
 
 const Container = styled.div<{ hideInput: boolean }>`
   border-radius: ${({ hideInput }) => (hideInput ? '8px' : '20px')};
-  border: 1px solid ${({ theme }) => theme.bg2};
+  // border: 1px solid ${({ theme }) => theme.bg2};
+  border: 1px solid #e2e2e2;
   background-color: ${({ theme }) => theme.bg1};
 `
 
@@ -101,6 +115,7 @@ const StyledBalanceMax = styled.button`
   cursor: pointer;
   margin-right: 0.5rem;
   color: ${({ theme }) => theme.primaryText1};
+  background: #ffffff8c;
   :hover {
     border: 1px solid ${({ theme }) => theme.primary1};
   }

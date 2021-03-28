@@ -30,7 +30,10 @@ export const HoverCard = styled(Card)`
   :hover {
     border: 1px solid ${({ theme }) => darken(0.06, theme.bg2)};
   }
+  bakckground: #000;
 `
+
+
 
 interface PositionCardProps {
   pair: Pair
@@ -68,32 +71,32 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
           <AutoColumn gap="12px">
             <FixedHeightRow>
               <RowFixed>
-                <Text fontWeight={500} fontSize={16}>
+                <Text fontWeight={500} fontSize={16} color={'#fff'}>
                   Your position
                 </Text>
               </RowFixed>
             </FixedHeightRow>
             <FixedHeightRow onClick={() => setShowMore(!showMore)}>
               <RowFixed>
-                <DoubleCurrencyLogo currency0={currency0} currency1={currency1} margin={true} size={20} />
-                <Text fontWeight={500} fontSize={20}>
-                  {currency0.symbol}/{currency1.symbol}
+                {/* <DoubleCurrencyLogo currency0={currency0} currency1={currency1} margin={true} size={20} /> */}
+                <Text fontWeight={500} fontSize={20} color={'#fff'}>
+                  <CurrencyLogo currency={currency0}/>{currency0.symbol} <span>&nbsp;</span>/<span>&nbsp;</span><CurrencyLogo currency={currency1}/>{currency1.symbol}
                 </Text>
               </RowFixed>
               <RowFixed>
-                <Text fontWeight={500} fontSize={20}>
+                <Text fontWeight={500} fontSize={20} color={'#fff'}>
                   {userPoolBalance ? userPoolBalance.toSignificant(4) : '-'}
                 </Text>
               </RowFixed>
             </FixedHeightRow>
             <AutoColumn gap="4px">
               <FixedHeightRow>
-                <Text color="#888D9B" fontSize={16} fontWeight={500}>
+                <Text color="#ffff" fontSize={16} fontWeight={500}>
                   {currency0.symbol}:
                 </Text>
                 {token0Deposited ? (
                   <RowFixed>
-                    <Text color="#888D9B" fontSize={16} fontWeight={500} marginLeft={'6px'}>
+                    <Text color="#ffff" fontSize={16} fontWeight={500} marginLeft={'6px'}>
                       {token0Deposited?.toSignificant(6)}
                     </Text>
                   </RowFixed>
@@ -102,12 +105,12 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
                 )}
               </FixedHeightRow>
               <FixedHeightRow>
-                <Text color="#888D9B" fontSize={16} fontWeight={500}>
+                <Text color="#ffff" fontSize={16} fontWeight={500}>
                   {currency1.symbol}:
                 </Text>
                 {token1Deposited ? (
                   <RowFixed>
-                    <Text color="#888D9B" fontSize={16} fontWeight={500} marginLeft={'6px'}>
+                    <Text color="#fff" fontSize={16} fontWeight={500} marginLeft={'6px'}>
                       {token1Deposited?.toSignificant(6)}
                     </Text>
                   </RowFixed>

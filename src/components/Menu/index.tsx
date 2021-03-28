@@ -5,13 +5,20 @@ import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
 import useToggle from '../../hooks/useToggle'
 import { useActiveWeb3React } from '../../hooks'
 import { getEtherscanLink } from '../../utils'
-
+import settings_icon from '../../assets/images/settings.png'
 import { ExternalLink } from '../../theme'
 
-const StyledMenuIcon = styled(MenuIcon)`
-  path {
-    stroke: ${({ theme }) => theme.text1};
-  }
+// const StyledMenuIcon = styled(MenuIcon)`
+//   path {
+//     stroke: ${({ theme }) => theme.text1};
+//   }
+// `
+
+const StyledMenuIcon = styled.div`
+  background-image: url(${settings_icon});
+  width: 25px;
+  height: 20px;
+  background-size: contain;
 `
 
 const StyledMenuButton = styled.button`
@@ -22,16 +29,21 @@ const StyledMenuButton = styled.button`
   margin: 0;
   padding: 0;
   height: 35px;
-  background-color: ${({ theme }) => theme.bg3};
+  // background-color: ${({ theme }) => theme.bg3};
 
   padding: 0.15rem 0.5rem;
   border-radius: 0.5rem;
+
 
   :hover,
   :focus {
     cursor: pointer;
     outline: none;
-    background-color: ${({ theme }) => theme.bg4};
+    // background-color: ${({ theme }) => theme.bg4};
+  }
+
+  &:hover {
+    border: 1px solid #fff;
   }
 
   svg {

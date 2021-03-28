@@ -19,14 +19,23 @@ import { ButtonError } from '../Button'
 import { useSettingsMenuOpen, useToggleSettingsMenu } from '../../state/application/hooks'
 import { Text } from 'rebass'
 import Modal from '../Modal'
+import config from '../../assets/images/config.png'
 
-const StyledMenuIcon = styled(Settings)`
-  height: 20px;
+
+// const StyledMenuIcon = styled(Settings)`
+//   height: 20px;
+//   width: 20px;
+
+//   > * {
+//     stroke: ${({ theme }) => theme.text1};
+//   }
+// `
+
+const StyledMenuIcon = styled.div`
+  background-image: url(${config});
   width: 20px;
-
-  > * {
-    stroke: ${({ theme }) => theme.text1};
-  }
+  height: 20px;
+  background-size: cover;
 `
 
 const StyledCloseIcon = styled(X)`
@@ -50,8 +59,7 @@ const StyledMenuButton = styled.button`
   margin: 0;
   padding: 0;
   height: 35px;
-  background-color: ${({ theme }) => theme.bg3};
-
+  // background-color: ${({ theme }) => theme.bg3};
   padding: 0.15rem 0.5rem;
   border-radius: 0.5rem;
 
@@ -59,12 +67,13 @@ const StyledMenuButton = styled.button`
   :focus {
     cursor: pointer;
     outline: none;
-    background-color: ${({ theme }) => theme.bg4};
+    // background-color: ${({ theme }) => theme.bg4};
+    border: 1px solid #fff;
   }
 
-  svg {
-    margin-top: 2px;
-  }
+  // svg {
+  //   margin-top: 2px;
+  // }
 `
 const EmojiWrapper = styled.div`
   position: absolute;
@@ -102,7 +111,7 @@ const MenuFlyout = styled.span`
 
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     min-width: 18.125rem;
-    right: -46px;
+    right: -25px;
   `};
 `
 
@@ -244,14 +253,14 @@ export default function SettingsTab() {
                 }
               />
             </RowBetween>
-            <RowBetween>
+            {/* <RowBetween>
               <RowFixed>
                 <TYPE.black fontWeight={400} fontSize={14} color={theme.text2}>
                   Toggle Dark Mode
                 </TYPE.black>
               </RowFixed>
               <Toggle isActive={darkMode} toggle={toggleDarkMode} />
-            </RowBetween>
+            </RowBetween> */}
           </AutoColumn>
         </MenuFlyout>
       )}
