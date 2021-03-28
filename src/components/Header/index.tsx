@@ -248,6 +248,6 @@ const StyledAbsoluteLink = styled.a`
   }
 
   @media (max-width: 530px) {
-    margin-right: 25px;
+    margin-right: 10px;
   }
 `
