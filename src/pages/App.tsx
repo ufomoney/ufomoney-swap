@@ -129,6 +129,7 @@ const StyledFooterLine = styled.div`
 `
 
 const Footer = styled.footer`
+  z-index: 2;
   width: 100%;
   display: flex;
   flex-direction: column;
