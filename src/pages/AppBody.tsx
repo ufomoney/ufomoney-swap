@@ -16,7 +16,7 @@ export const BodyWrapper = styled.div<{ disabled?: boolean }>`
 
 const StyledLineContainer = styled.div`
 width: 386px;
-height: 500px;
+height: 117%;
 position: absolute;
 right: 67px;
 z-index: -1;

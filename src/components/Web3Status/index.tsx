@@ -80,6 +80,7 @@ const Web3StatusConnect = styled(Web3StatusGeneric)<{ faded?: boolean }>`
       :focus {
         border: 1px solid ${({ theme }) => darken(0.05, theme.primary4)};
         color: ${({ theme }) => darken(0.05, theme.primaryText1)};
+        background: #fff;
       }
     `}
 `
@@ -91,13 +92,27 @@ const Web3StatusConnected = styled(Web3StatusGeneric)<{ pending?: boolean }>`
   font-weight: 500;
   :hover,
   :focus {
-    background-color: ${({ pending, theme }) => (pending ? darken(0.05, theme.primary1) : lighten(0.05, theme.bg2))};
+    // background-color: ${({ pending, theme }) => (pending ? darken(0.05, theme.primary1) : lighten(0.05, theme.bg2))};
 
     :focus {
       border: 1px solid ${({ pending, theme }) => (pending ? darken(0.1, theme.primary1) : darken(0.1, theme.bg3))};
+      background: #fff;
     }
   }
-  width: 84% !Important;
+  // width: 84% !Important;
+  background: #fff;
+  border-radius: 50px;
+  color: #1d4273;
+  text-align: center;
+  outline: none;
+  font-weight: bolder;
+  font-size: 16px;
+  cursor: pointer;
+  &:hover {
+    background: linear-gradient(182.61deg, rgba(96, 224, 170, 0.67) 2.17%,
+    rgba(95, 233, 175, 0.48) 97.82%);
+    color: #fff;
+  
 `
 
 const Text = styled.p`

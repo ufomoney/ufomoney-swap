@@ -7,6 +7,7 @@ import CurrencyLogo from '../../components/CurrencyLogo'
 import { Field } from '../../state/mint/actions'
 import { TYPE } from '../../theme'
 
+
 export function ConfirmAddModalBottom({
   noLiquidity,
   price,

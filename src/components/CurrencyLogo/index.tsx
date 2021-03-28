@@ -16,6 +16,7 @@ const Image = styled.img<{ size: string }>`
   background-color: white;
   border-radius: 1rem;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.075);
+  margin-right: 5px;
 `
 
 const Emoji = styled.span<{ size?: string }>`

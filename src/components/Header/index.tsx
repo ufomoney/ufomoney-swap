@@ -175,10 +175,7 @@ export default function Header() {
                   {userEthBalance?.toSignificant(4)} BNB
                 </BalanceText>
               ) : null}
-              <Container>
               <Web3Status />
-              </Container>
-              
             </AccountElement>
           </HeaderElement>
           <HeaderElementWrap>
@@ -190,29 +187,6 @@ export default function Header() {
     </HeaderFrame>
   )
 }
-
-const Container = styled.div`
-
-  > button {
-    background: #fff;
-    border-radius: 50px;
-    width: 207px;
-    height: 46px;
-    color: #1d4273;
-    text-align: center;
-    outline: none;
-    border: none;
-    font-weight: bolder;
-    font-size: 16px;
-    cursor: pointer;
-    margin-right: 15px;
-    &:hover {
-      background: linear-gradient(182.61deg, rgba(96, 224, 170, 0.67) 2.17%,
-      rgba(95, 233, 175, 0.48) 97.82%);
-      color: #fff;
-    }
-  }
-`
 const StyledText = styled.span`
   color: #fff;
   font-family: "Arial Rounded MT Bold", sans-serif;
