@@ -53,9 +53,9 @@ const HeaderElementWrap = styled.div`
   display: flex;
   align-items: center;
 
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    margin-top: 0.5rem;
-`};
+//   ${({ theme }) => theme.mediaWidth.upToSmall`
+//     margin-top: 0.5rem;
+// `};
 `
 
 const Title = styled.a`
@@ -148,8 +148,7 @@ export default function Header() {
 
   return (
     <HeaderFrame>
-      <RowBetween style={{ alignItems: 'flex-start' }} padding="1rem 1rem 0 1rem">
-        
+      <RowBetween style={{ alignItems: 'center' }} padding="1rem 1rem 0 1rem">
         <StyledLinkContainer>
         <HeaderElement>
           <Title href="." >
@@ -160,8 +159,8 @@ export default function Header() {
           </Title>
         </HeaderElement>
           <StyledAbsoluteLink href="https://info.ufo.money">About Us</StyledAbsoluteLink>
-          {/* <StyledLink exact activeClassName="active" to="/swap">Exchange</StyledLink> */}
-          <StyledAbsoluteLink href=".">Stake</StyledAbsoluteLink>
+          <StyledLink exact activeClassName="active" to="/swap">Exchange</StyledLink>
+          <StyledAbsoluteLink href="https://ufo.money">Stake</StyledAbsoluteLink>
         </StyledLinkContainer>
         <HeaderControls>
           <HeaderElement>
@@ -169,9 +168,10 @@ export default function Header() {
               {!isMobile && NETWORK_LABELS[chainId] && <NetworkCard>{NETWORK_LABELS[chainId]}</NetworkCard>}
             </TestnetWrapper>
             <AccountElement active={!!account} 
-            style={{borderRadius: '50px', width: '207px', pointerEvents: 'auto' }}>
+            style={{borderRadius: '50px', width: '207px', pointerEvents: 'auto',
+             background: 'linear-gradient( 90deg,#bfe4ff 16.36%, rgba(0,223,252,0.94) 106.83%)' }}>
               {account && userEthBalance ? (
-                <BalanceText style={{ flexShrink: 0 }} pl="0.75rem" pr="0.5rem" fontWeight={500}>
+                <BalanceText style={{color: '#353030d4', flexShrink: 0 }} pl="0.75rem" pr="0.5rem" fontWeight={500}>
                   {userEthBalance?.toSignificant(4)} BNB
                 </BalanceText>
               ) : null}
@@ -180,7 +180,7 @@ export default function Header() {
           </HeaderElement>
           <HeaderElementWrap>
             <Settings />
-            <Menu />
+            {/* <Menu /> */}
           </HeaderElementWrap>
         </HeaderControls>
       </RowBetween>
@@ -217,9 +217,9 @@ const StyledLink = styled(NavLink)`
     color: #93ff97;
   }
 
-  &.active {
-    color: #6affd6;
-  }
+  // &.active {
+  //   color: #6affd6;
+  // }
   &:first-child {
     @media (max-width: 533px) {
       padding-left: 5px;

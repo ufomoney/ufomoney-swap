@@ -88,10 +88,70 @@ export default function App() {
                 <Route component={RedirectPathToSwapOnly} />
               </Switch>
             </Web3ReactManager>
-            <Marginer />
+            <Footer>
+            <StyledFooterLine/>
+            <StyledNav>
+              <StyledLink target="_blank" href="https://t.me/ufomoneydefi">
+                Telegram
+              </StyledLink>
+              <StyledLink target="_blank" href="https://github.com/ufomoney">
+                Github
+              </StyledLink>
+              <StyledLink target="_blank" href="https://twitter.com/ufo_money">
+                Twitter
+              </StyledLink>
+            </StyledNav>
+          </Footer>
           </BodyWrapper>
         </AppWrapper>
       </HashRouter>
     </Suspense>
   )
 }
+
+const StyledFooterLine = styled.div`
+  width: 40%;
+  margin: 25px auto 0 auto;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1.74%,
+   #FFFFFF 51.03%, rgba(255, 255, 255, 0.02) 98.7%);
+   margin-bottom: 10px;
+   @media (max-width: 600px) {
+    margin: 0;
+    margin-bottom: 14px;
+  }
+`
+
+const Footer = styled.footer`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  margin-top: 10px;
+  @media (max-width: 600px) {
+    margin-bottom: 0;
+    padding: 0;
+  }
+}
+`
+
+const StyledNav = styled.nav`
+  align-items: center;
+  width: 50%;
+  justify-content: center;
+  display: flex;
+`
+
+const StyledLink = styled.a`
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Helvetica';
+  font-weight: bold;
+  &:hover {
+
+    color: #6affd6;
+  }
+  margin-right: 30px;
+  margin-left: 20px;
+`
