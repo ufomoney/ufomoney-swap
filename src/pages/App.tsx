@@ -104,7 +104,7 @@ export default function App() {
               <StyledLink target="_blank" href="https://github.com/ufomoney">
                 Github
               </StyledLink>
-              <StyledLink target="_blank" href="https://twitter.com/ufo_money">
+              <StyledLink target="_blank" href="https://twitter.com/ufomoneyproject">
                 Twitter
               </StyledLink>
             </StyledNav>

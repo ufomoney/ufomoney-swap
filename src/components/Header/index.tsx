@@ -158,9 +158,9 @@ export default function Header() {
             <StyledText>ufo.money</StyledText>
           </Title>
         </HeaderElement>
-          <StyledAbsoluteLink href="https://info.ufo.money">About Us</StyledAbsoluteLink>
+          <StyledAbsoluteLink href="https://ufo.money">Home</StyledAbsoluteLink>
           <StyledLink exact activeClassName="active" to="/swap">Exchange</StyledLink>
-          <StyledAbsoluteLink href="https://ufo.money">Stake</StyledAbsoluteLink>
+          <StyledAbsoluteLink href="https://ufo.money/farms">Stake</StyledAbsoluteLink>
         </StyledLinkContainer>
         <HeaderControls>
           <HeaderElement>
